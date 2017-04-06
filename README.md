@@ -35,3 +35,7 @@ y(t) = A sin(w t)
     * Mean collision time: dt
     * Mean free path: y
     * Particle velocity: vi
+
+By using these parameters we can write a java macro script as a input file to StarCCM+. The master.sim file will be used as a base file.
+
+Addline
