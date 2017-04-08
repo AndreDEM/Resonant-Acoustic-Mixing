@@ -348,7 +348,7 @@ def speed(name,A,f,start,TS,DIR):
     
     w = 2*np.pi*f
     
-    file.write('    userFieldFunction_S.setDefinition("${Time} > '+str(TS+1)+'? 0 :(${Time} < '+str(start)+'? 0 : ('+str(A)+'*'+str(w)+'*sin((${Time}-'+str(start)+')*'+str(w)+')))");\n')
+    file.write('    userFieldFunction_S.setDefinition("${Time} > '+str(TS)+'? 0 :(${Time} < '+str(start)+'? 0 : ('+str(A)+'*'+str(w)+'*sin((${Time}-'+str(start)+')*'+str(w)+')))");\n')
     
     #Add Motion
     file.write('    TranslatingMotion translatingMotion_0 = \n')
@@ -370,7 +370,7 @@ def speed(name,A,f,start,TS,DIR):
     file.write('//Edit total solution time\n')
     file.write('    PhysicalTimeStoppingCriterion physicalTimeStoppingCriterion_0 = \n')
     file.write('      ((PhysicalTimeStoppingCriterion) simulation_0.getSolverStoppingCriterionManager().getSolverStoppingCriterion("Maximum Physical Time"));\n')
-    file.write('    physicalTimeStoppingCriterion_0.getMaximumTime().setValue('+str(TS+1)+');\n')
+    file.write('    physicalTimeStoppingCriterion_0.getMaximumTime().setValue('+str(TS+2)+');\n')
     
     file.write('//Stopping Criteria\n')
     file.write('    StepStoppingCriterion stepStoppingCriterion_0 = \n')
